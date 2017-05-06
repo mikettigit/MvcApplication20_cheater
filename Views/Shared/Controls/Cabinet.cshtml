@@ -1,0 +1,177 @@
+﻿<div class="client-info all-margin-left-15">
+    <div class="info-title">
+        <h2 class="cabinet-font-size">Информация аккаунта:</h2>
+    </div>
+    <div class="info-row">
+        <div class="info-t">Логин:</div>
+        <div class="info-text">
+            <a class="__cf_email__" href="mailto:@Model.UserEmail" style="float:left;">@Model.UserLogin</a>
+            <div class="info-change">
+                <ul class="table-title">
+                    @*<li>
+                            <a href="/Account/ChangePassword">сменить пароль</a>
+                        </li>*@
+                    <li>
+                        <a href="/Account/Logout">выйти</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="info-row">
+            <div class="info-t">Почта:</div>
+            <div class="info-text"><a class="__cf_email__" href="mailto:@Model.UserEmail">@Model.UserEmail</a></div>
+            <div class="info-row balance">
+                <div class="info-t">Баланс счёта:</div>
+                <div class="info-text">@Model.UserBalance руб.</div>
+            </div>
+            <div class="clearfix"></div>
+            @if (Model.UserLogin.ToLower() != "admin") { 
+            <a href="/Finance" class="btn btn-danger">Пополнить</a>
+            }
+        </div>
+    </div>
+</div>
+
+@{
+    List<MvcApplication10.Models.Order> Orders = new List<MvcApplication10.Models.Order>();
+
+    List<string> UserPathes = new List<string>();
+    if (Model.UserLogin.ToLower() == "admin")
+    {
+        UserPathes.AddRange(System.IO.Directory.GetDirectories(Server.MapPath("/Users/")));
+    }
+    else
+    {
+        UserPathes.Add(Server.MapPath("/Users/" + Model.UserLogin));
+    }
+    
+        
+    foreach (var UserPath in UserPathes)     
+    {
+        string[] orders = System.IO.Directory.GetDirectories(UserPath + "/Orders");
+        var i = 1;
+        foreach (var OrderDir in orders)
+        {
+            var Order = new MvcApplication10.Models.Order();
+            if (Model.UserLogin.ToLower() == "admin") 
+            { 
+                Order.UserLogin = System.IO.Path.GetFileName(UserPath); 
+            }
+            Order.Id = i.ToString();
+            Order.Date = System.IO.Path.GetFileName(OrderDir);
+        
+            var SocialSearchPattern = new System.Text.RegularExpressions.Regex(@"$(?<=\.(txt))", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+            var socialnames = Directory.GetFiles(OrderDir).Where(f => SocialSearchPattern.IsMatch(f)).OrderBy(f => f);
+            if (socialnames.Count() > 0)
+            {
+                string dirpath = Path.GetFileNameWithoutExtension(socialnames.First());
+                string[] separators = {"..."};
+                string[] parts = dirpath.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+                Order.Social = parts[0];
+                Order.Service = parts[1];
+                Order.Link = System.IO.File.ReadAllText(socialnames.First());
+            }
+        
+            var CountSearchPattern = new System.Text.RegularExpressions.Regex(@"$(?<=\.(count))", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+            var countnames = Directory.GetFiles(OrderDir).Where(f => CountSearchPattern.IsMatch(f)).OrderBy(f => f);
+            if (countnames.Count() > 0)
+            {
+                Order.Count = Path.GetFileNameWithoutExtension(countnames.First());
+            }
+
+            var SumSearchPattern = new System.Text.RegularExpressions.Regex(@"$(?<=\.(sum))", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+            var sumnames = Directory.GetFiles(OrderDir).Where(f => SumSearchPattern.IsMatch(f)).OrderBy(f => f);
+            if (sumnames.Count() > 0)
+            {
+                Order.Sum = Path.GetFileNameWithoutExtension(sumnames.First());
+            }
+
+            var StateSearchPattern = new System.Text.RegularExpressions.Regex(@"$(?<=\.(state))", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+            var statenames = Directory.GetFiles(OrderDir).Where(f => StateSearchPattern.IsMatch(f)).OrderBy(f => f);
+            if (statenames.Count() > 0)
+            {
+                Order.State = Path.GetFileNameWithoutExtension(statenames.First());
+            }
+
+            Orders.Add(Order);
+
+            i++;
+        }
+    }
+}
+
+<script src="/Scripts/cabinet.js"></script>
+<script>
+
+    $(document).ready(function () {
+        @{
+        string[] States = { "На модерации", "Отменено", "Выполнено" };
+        var curlog = "";
+        foreach (var Order in Orders) {
+            if (Model.UserLogin.ToLower() == "admin")
+            {
+                if (Order.State == "Выполнено")
+                {
+                    continue;
+                }
+            }
+            if (curlog != Order.UserLogin)
+            {
+                <text>
+                var existingrow = $(".my-order-tab .my-order-t.table .tb-row:has('.ord')");
+                var newrow = existingrow.clone();
+                newrow.find(".ord").removeClass("ord").find("div").html("");
+                newrow.find(".order-Id").css("overflow", "visible").html("<strong>@Order.UserLogin</strong>");
+                $(".my-order-tab .my-order-t.table").append(newrow);
+
+                var newrow2 = newrow.clone();
+                newrow2.find(".order-create-date").remove();
+                newrow2.find(".order-social").remove();
+                newrow2.find(".order-count").remove();
+                newrow2.find(".order-link-title").remove();
+                $(".my-order-tab320 .my-order-t.table").append(newrow2);
+                </text> 
+                curlog = Order.UserLogin;
+            }
+            <text>
+                var existingrow = $(".my-order-tab .my-order-t.table .tb-row:has('.ord')");
+                var newrow = existingrow.clone();
+                newrow.find(".ord").removeClass("ord");
+                newrow.find(".order-cell").html("<span style='display:none;'>@Order.UserLogin</span>");
+                newrow.find(".order-Id").html("@Order.Id");
+                newrow.find(".order-create-date").html("@Order.Date");
+                newrow.find(".order-social").html("@Order.Social");
+                newrow.find(".order-service-name").html("@Order.Service");
+                newrow.find(".order-count").html("@Order.Count");
+                newrow.find(".order-prices").html("@Order.Sum руб.");
+                newrow.find(".order-link-title").html("@Order.Link");
+                @if (Model.UserLogin.ToLower() == "admin")
+                {
+                    @Html.Raw("newrow.find(\".order-status-name\").html(\"<select style='width:80px;'><option>"); @Order.State; @Html.Raw("</option>");
+                    foreach (var state in States) {
+                        if (state != Order.State) {
+                            @Html.Raw("<option>"); @state; @Html.Raw("</option>");
+                        }
+                    }
+                    @Html.Raw("</select>\");");
+                }
+                else 
+                { 
+                    @Html.Raw("newrow.find(\".order-status-name\").html(\""); @Order.State; @Html.Raw("\");");
+                }
+                $(".my-order-tab .my-order-t.table").append(newrow);
+
+                var newrow2 = newrow.clone();
+                newrow2.find(".order-create-date").remove();
+                newrow2.find(".order-social").remove();
+                newrow2.find(".order-count").remove();
+                newrow2.find(".order-link-title").remove();
+                $(".my-order-tab320 .my-order-t.table").append(newrow2);
+            </text>
+        }
+        }
+    })
+
+</script>
+
+

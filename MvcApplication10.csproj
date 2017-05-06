@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{69D07F8F-A86C-47F1-80AD-8007424EC1D5}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MvcApplication10</RootNamespace>
+    <AssemblyName>MvcApplication10</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9.5\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.30506.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.30506.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\PocketController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\JsonMessage.cs" />
+    <Compile Include="Helpers\ImageResizer.cs" />
+    <Compile Include="Helpers\SessionManager.cs" />
+    <Compile Include="Models\EnhanceModel.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\PocketModel.cs" />
+    <Compile Include="Models\ReplacementModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Account\Cabinet\xn--e1araccdibh8b.xn--p1ai.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Account\Cabinet\xn--e1araccdibh8b.xn--p1ai_2015252214_77052377.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Account\Login\xn--e1araccdibh8b.xn--p1ai.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Account\Login\xn--e1araccdibh8b.xn--p1ai_2015252214_-574800836.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Account\Logout\xn--e1araccdibh8b.xn--p1ai.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Account\Logout\xn--e1araccdibh8b.xn--p1ai_-1603299197_552438357.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Account\Register\xn--e1araccdibh8b.xn--p1ai.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Account\Register\xn--e1araccdibh8b.xn--p1ai_-1603299197_-771320467.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\baza-znanii\xn--e1araccdibh8b.xn--p1ai.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\baza-znanii\xn--e1araccdibh8b.xn--p1ai_-1724467275.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\contacts\xn--e1araccdibh8b.xn--p1ai.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\contacts\xn--e1araccdibh8b.xn--p1ai_1762608870_-679385454.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\06f07aeffc.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\AddUser_24.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\AddUser_48.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\blokirovka_gruppi.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\Brush-24.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\Brush-48.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\Email_24.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\Email_48.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\Facebook-24.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\Facebook-48.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\fb group.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\fb%2520group.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\Frend_24.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\Frend_48.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\Google1-24.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\Google1-48.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\Google_24.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\Google_48.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\Instagram-24.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\Instagram-48.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\LikeSite-24.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\LikeSite-48.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\Like_24.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\Like_48.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\Marker2_24.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\Marker2_48.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\Marker_24.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\Marker_48.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\MoneyTransfer_48.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\Odnoklassniki_24.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\Odnoklassniki_48.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\otzivi.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\otzovik.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\pismo.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\sales.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\SoundCloud_24.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\SoundCloud_48.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\spisanie_vkontakte.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\ThumbUp-24.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\ThumbUp-48.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\Trophy-24.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\Trophy-48.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\Twitter_24.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\Twitter_48.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\UserPremium_24.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\UserPremium_48.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\Vine_24.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\Vine_48.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\Visible-24.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\Visible-48.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\vk-viewes2.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\VKontakte_24.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\VKontakte_48.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\Youtube-likes.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\youtube-top.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\YouTube_24.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\Files\Images\YouTube_48.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\img\check.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\themes\img\arrow.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\themes\img\bg-cabinet.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\themes\img\bg-landing-image.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\themes\img\bg-landing.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\themes\img\bg-questions.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\themes\img\cards-icon.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\themes\img\cat-bg.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\themes\img\cat1.jpg" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\themes\img\cat4.jpg" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\themes\img\cat5.jpg" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\themes\img\favicon.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\themes\img\guarantee.svg" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\themes\img\icon-accordion-angle-grey.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\themes\img\icon-accordion-angle-white.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\themes\img\knowledge.svg" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\themes\img\li-bg.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\themes\img\logo-new-x2.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\themes\img\logo-new.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\themes\img\One-Wallet.jpg" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\themes\img\payment-list.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\themes\img\service-icon.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\themes\img\soc-lineV2.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\themes\img\top-bg320.jpg" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\themes\img\walletone.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\themes\img\webmoney.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\themes\img\yamoney.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\favicon.ico" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Finance\xn--e1araccdibh8b.xn--p1ai.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Finance\xn--e1araccdibh8b.xn--p1ai_-2130918897_-1515452199.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\info1-1\xn--e1araccdibh8b.xn--p1ai.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\info1-1\xn--e1araccdibh8b.xn--p1ai_1762608870.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\info1\xn--e1araccdibh8b.xn--p1ai.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\info1\xn--e1araccdibh8b.xn--p1ai_1762608870.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\net-uslugi\xn--e1araccdibh8b.xn--p1ai.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\net-uslugi\xn--e1araccdibh8b.xn--p1ai_-1724467275.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\politika\xn--e1araccdibh8b.xn--p1ai.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\politika\xn--e1araccdibh8b.xn--p1ai_-1603299197.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Question\Index\xn--e1araccdibh8b.xn--p1ai.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Question\Index\xn--e1araccdibh8b.xn--p1ai_1762608870.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\sales\xn--e1araccdibh8b.xn--p1ai.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\sales\xn--e1araccdibh8b.xn--p1ai_1762608870.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Scripts\bootstrap-typeahead.js" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Scripts\bootstrap-typeahead_2015252214_2087795771.js" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Scripts\ckeditor\plugins\smiley\images\wink_smile.png" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\xn--e1araccdibh8b.xn--p1ai.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\xn--e1araccdibh8b.xn--p1ai_2015252214_1704985554.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\YouTube\Вывод-ролика-в-ТОП\xn--e1araccdibh8b.xn--p1ai.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\YouTube\Вывод-ролика-в-ТОП\xn--e1araccdibh8b.xn--p1ai_-2130918897.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\YouTube\Комментарии\xn--e1araccdibh8b.xn--p1ai.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\YouTube\Комментарии\xn--e1araccdibh8b.xn--p1ai_-1724467275.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\YouTube\Лайки\xn--e1araccdibh8b.xn--p1ai.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\YouTube\Лайки\xn--e1araccdibh8b.xn--p1ai_-2130918897.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\YouTube\Просмотры\xn--e1araccdibh8b.xn--p1ai.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\YouTube\Просмотры\xn--e1araccdibh8b.xn--p1ai_-1724467275.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Вконтакте\Вступившие-премиум\xn--e1araccdibh8b.xn--p1ai.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Вконтакте\Вступившие-премиум\xn--e1araccdibh8b.xn--p1ai_2015252214_-1378551371.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Вконтакте\Вступившие-с-критериями\xn--e1araccdibh8b.xn--p1ai.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Вконтакте\Вступившие-с-критериями\xn--e1araccdibh8b.xn--p1ai_-2130918897_-1548916963.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Вконтакте\Вступившие-эконом\xn--e1araccdibh8b.xn--p1ai.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Вконтакте\Вступившие-эконом\xn--e1araccdibh8b.xn--p1ai_2015252214_2066208086.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Вконтакте\Друзья-и-подписчики\xn--e1araccdibh8b.xn--p1ai.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Вконтакте\Друзья-и-подписчики\xn--e1araccdibh8b.xn--p1ai_-2130918897.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Вконтакте\Лайки-на-пост\xn--e1araccdibh8b.xn--p1ai.htm" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Вконтакте\Лайки-на-пост\xn--e1araccdibh8b.xn--p1ai_-2130918897.htm" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery_pocket.js" />
+    <Content Include="Scripts\cabinet.js" />
+    <Content Include="Scripts\price.js" />
+    <Content Include="Scripts\_post.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="_документация\ToDo.txt" />
+    <Content Include="_документация\Описание.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Sheets\_1_main.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Styles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Controls\Cabinet.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Controls\CountBalance.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Controls\pricejs.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\bundles\scripts&amp;v=HmF6aGEx0KrdeROus0W9-4hqaVaJi0oWJuAvLwDe8bs1" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\themes\fonts\BitterBold.eot" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\themes\fonts\BitterBoldItalic.eot" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\themes\fonts\BitterItalic.eot" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\themes\fonts\BitterRegular.eot" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\Content\themes\fonts\fontawesome-webfont.eot" />
+    <Content Include="App_Data\Pocket\xn--e1araccdibh8b.xn--p1ai\xn--e1araccdibh8b.xn--p1ai.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>31776</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:31776/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

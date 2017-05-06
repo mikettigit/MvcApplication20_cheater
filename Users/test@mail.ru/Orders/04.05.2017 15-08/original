@@ -1,0 +1,29 @@
+Name: Вконтакте
+NameOfItem: Вступившие премиум
+SocialNetworkType: 11fb3ba6-b386-4494-aac1-945bcc893cf6
+OrderTypeList: ce146177-2350-4ff5-99ca-f38fc8f78724
+Id: ce146177-2350-4ff5-99ca-f38fc8f78724
+Email: 
+Link: http://vk.com
+VkTargetText: -
+Count: 1000
+OrderExtraOptionsForOrders[0].Id: 24d11353-96db-4a9f-9b4f-a93ef84834ea
+OrderExtraOptionsForOrders[0].OptionTypeId: 675aeb19-ac92-4405-8cf9-cc3fd5bac762
+OrderExtraOptionsForOrders[0].Selected: true,false
+OrderExtraOptionsForOrders[1].Id: 26e22b5c-239b-4d66-8648-922e3d6a8080
+OrderExtraOptionsForOrders[1].OptionTypeId: 675aeb19-ac92-4405-8cf9-cc3fd5bac762
+OrderExtraOptionsForOrders[1].Selected: false
+OrderExtraOptionsForOrders[2].Id: f908dc48-98a3-492d-a826-97245a08a3e6
+OrderExtraOptionsForOrders[2].OptionTypeId: 675aeb19-ac92-4405-8cf9-cc3fd5bac762
+OrderExtraOptionsForOrders[2].Selected: false
+OrderExtraOptionsForOrders[3].Id: 1a03ce1d-374e-4b54-b4a5-ba954d1e57be
+OrderExtraOptionsForOrders[3].OptionTypeId: c66c202d-1996-41ce-8ca6-36ac02a46646
+OrderExtraOptionsForOrders[3].Selected: true,false
+OrderExtraOptionsForOrders[4].Id: d47daac2-0277-47e6-ba11-b9aeed35df87
+OrderExtraOptionsForOrders[4].OptionTypeId: c66c202d-1996-41ce-8ca6-36ac02a46646
+OrderExtraOptionsForOrders[4].Selected: false
+OrderExtraOptionsForOrders[5].Id: 3abb00b0-e43b-4a4d-9c44-b969f04f6278
+OrderExtraOptionsForOrders[5].OptionTypeId: c66c202d-1996-41ce-8ca6-36ac02a46646
+OrderExtraOptionsForOrders[5].Selected: false
+from URL: /Order/Create
+2fea14ff-d8e3-42c1-a230-3917b7a640c9: 2fea14ff-d8e3-42c1-a230-3917b7a640c9

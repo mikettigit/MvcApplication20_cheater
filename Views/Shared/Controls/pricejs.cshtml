@@ -1,0 +1,10 @@
+﻿@{
+    string FilePath = "/Prices" + Request.FilePath + "/price.js";
+    string FileName = Server.MapPath(FilePath);
+    if (System.IO.File.Exists(FileName))
+    {
+        <script src="@FilePath"></script>
+    }
+    <script src="/Scripts/price.js"></script>
+}
+
